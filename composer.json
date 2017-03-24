@@ -1,0 +1,27 @@
+{
+    "name": "arimis-integral/integral",
+    "description": "A intelligent extension for integral points management",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Arimis Wang",
+            "email": "arimis@163.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": ">=2.0.6",
+        "yiisoft/yii2-bootstarp": "*",
+        "yiisoft/yii2-jui" : "*",
+        "kartik-v/yii2-widget-fileinput": "@dev",
+        "kartik-v/yii2-widget-select2": "@dev",
+        "kucha/ueditor": "*",
+        "2amigos/yii2-date-time-picker-widget": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "arimis\\integral\\": ""
+        }
+    }
+}
