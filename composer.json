@@ -23,5 +23,8 @@
         "psr-4": {
             "arimis\\integral\\": ""
         }
+    },
+    "extra": {
+    	"version": "dev-master"
     }
 }
