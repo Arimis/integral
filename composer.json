@@ -26,6 +26,8 @@
         }
     },
     "extra": {
-    	"version": "dev-master"
+    	"branch-alias": {
+            "dev-master": "master"
+        }
     }
 }
