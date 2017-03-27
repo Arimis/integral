@@ -24,10 +24,5 @@
         "psr-4": {
             "arimis\\integral\\": ""
         }
-    },
-    "extra": {
-    	"branch-alias": {
-            "dev-master": "master"
-        }
     }
 }
