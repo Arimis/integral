@@ -11,8 +11,9 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": ">=2.0.6",
-        "yiisoft/yii2-bootstarp": "*",
+       "php": ">=5.6.0",
+        "yiisoft/yii2": "~2.0.5",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-jui" : "*",
         "kartik-v/yii2-widget-fileinput": "@dev",
         "kartik-v/yii2-widget-select2": "@dev",
