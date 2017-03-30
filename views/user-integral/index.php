@@ -12,6 +12,7 @@ use arimis\integral\IntegralUserInterface;
  */
 
 /**
+ *
  * @var View $this
  * @var IntegralUserInterface $userBase
  */
@@ -42,37 +43,52 @@ $this->title = Yii::t("app", "用户首页");
 ?>
 
 <div>
-<!-- 个人中心--->
-<div class="main-content main" style="background:#fff0ed; position:relative;">
-    <div class="user_list">
-        <ul>
-            <li class="show_int">
-                <span><em><?=$userBase->getTotal()?></em><br>总积分</span>
-                <span><em><?=$userBase->getAvailable()?></em><br>可用积分</span>
-                <span><em><?=$userBase->getFrozen()?></em><br>冻结积分</span>
-                <span style="border-left: 1px solid #efefef;">
-                        <a href="<?=Url::toRoute("/front/share/index");?>" class="" style="color: #f6827a;"><i class="icon-share-alt"></i><br>分享赢积分</a>
-                    </span>
-            </li>
-        </ul>
+    <!-- 个人中心--->
+    <div class="main-content main" style="background: #fff0ed; position: relative;">
+        <div class="user_list">
+            <ul>
+                <li class="show_int"><span><em><?=$userBase->getTotal()?></em><br>总积分</span> <span><em><?=$userBase->getAvailable()?></em><br>可用积分</span> <span><em><?=$userBase->getFrozen()?></em><br>冻结积分</span> <span style="border-left: 1px solid #efefef;"> <a
+                        href="<?=Url::toRoute("/front/share/index");?>" class="" style="color: #f6827a;"><i class="icon-share-alt"></i><br>分享赢积分</a>
+                </span></li>
+            </ul>
 
-        <?= \yii\grid\GridView::widget([
-            'dataProvider' => $dataProvider,
-//            'filterModel' => $searchModel,
+        <?=\yii\grid\GridView::widget([
+            'dataProvider' => $dataProvider, 
+            /* 'filterModel' => $searchModel, */
             'columns' => [
-                'create_time',
-                'change_type',
-                'change_points',
-                'before_available',
-                'after_available',
-                'before_frozen',
-                'after_frozen',
-            ],
-        ]); ?>
+                ['attribute' => 'create_time', 'label' => Yii::t("arimis-integral", "时间"), "value" => function($model) {
+                    return date("Y-m-d H:i", strtotime($model->create_time));
+                }],
+                ['attribute' => 'change_type', 'label' => Yii::t("arimis-integral", "方式"), 'value' => function($model) {
+                    switch ($model->change_type) {
+                        case RuleInterface::INTEGRAL_CHANGE_TYPE_INCREASE: {
+                            return Yii::t("arimis-integral", "增加");
+                            break;
+                        }
+                        case RuleInterface::INTEGRAL_CHANGE_TYPE_REDUCE: {
+                            return Yii::t("arimis-integral", "减少");
+                            break;
+                        }
+                        case RuleInterface::INTEGRAL_CHANGE_TYPE_FROZE: {
+                            return Yii::t("arimis-integral", "冻结");
+                            break;
+                        }
+                        case RuleInterface::INTEGRAL_CHANGE_TYPE_THAW: {
+                            return Yii::t("arimis-integral", "解冻");
+                            break;
+                        }
+                    }
+                }], 
+                ['attribute' => 'change_points', 'label' => Yii::t("arimis-integral", "数量")],
+                ['attribute' => 'before_available', 'label' => Yii::t("arimis-integral", "可用（前）")],
+                ['attribute' => 'after_available', 'label' => Yii::t("arimis-integral", "可用（后）")],
+                ['attribute' => 'before_frozen', 'label' => Yii::t("arimis-integral", "冻结（前）")],
+                ['attribute' => 'after_frozen', 'label' => Yii::t("arimis-integral", "冻结（后）")],
+            ]]);?>
 
     </div>
-</div>
-<!-- 个人中心--->
+    </div>
+    <!-- 个人中心--->
 
 </div>
 <!---公用中间内容区域--->
