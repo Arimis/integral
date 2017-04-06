@@ -1,0 +1,177 @@
+/*彩钻查询列表*/
+body{background:#fff;}
+input{border:none;}
+ul{padding:0; list-style: none;}
+em{font-style: normal;}
+.container-fluid {
+
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+/*=====================彩钻搜索列表===========*/
+.navbar-fixed-top{z-index: 10 !important;}
+.main-content.main{margin-top: -15px !important;margin-bottom: 0 !important;padding-bottom: 0 !important; position: relative; background: #fff;}
+.main-content.cont{margin-top: -15px;margin-bottom: 0 !important;padding-bottom: 60px ;  background: #fff;}
+.page-title.nav_bgd{background: #ff8a81; border-bottom:1px solid #efefef;width:100%;position: fixed;height:40px;z-index: 100; left:0; right:0;top:110px;padding:0; margin:0;}
+.nav_bgd .jewelry li{display: block; color: #fff; float: left;width:16%;margin:0; padding:0; text-align: center; }
+.nav_bgd .diamond li{display: block; color: #fff; float: left;width:16%;margin:0; padding:0; text-align: center; }
+.nav_bgd li a{border-right:1px solid #feb8ae;color: #fff;line-height: 16px; width:98%;display: block;height:16px;margin-top: 11px;}
+.nav_bgd li:last-child a{border-right:none;}
+.nav_bgd ul{overflow: hidden;}
+.grid-structure.dia_center{margin-top: 41px; position: relative;}
+.dia_center ul{padding:0 1.8%; overflow: hidden;}
+.dia_center ul li{height:220px;margin:1% 0;display: block; background: #fff; width:49%; float: right; padding:0;   }
+.dia_center ul li:nth-of-type(odd){float: left;}
+.dia_center  li  a{display: block; overflow: hidden;}
+.dia_center  li .pro_img{height:144px; display: block; margin:0 auto;}
+.dia_center  li .pro_text{height:89px;padding:0 5px;}
+.dia_center  li .pro_text h1{font-weight: normal;height:46px;display:block;margin:0;padding: 5px 0; overflow:hidden;line-height:18px;font-size: 12px;color: #666; border-top: 1px solid #efefef; }
+.dia_center  li .pro_text span{color: #ff4302;font-size: 12px;}
+.mark{width:100%; display: none; height:100%; background: rgba(0,0,0,0.5);position: fixed; top:0; left:0; z-index: 9;}
+.main-content .bomb_box{position: fixed; display: none; left:0;top:149px;overflow:hidden; padding-bottom:5px;width:100%;border-bottom: 1px solid #fff0ed; background: #fff;z-index: 100;}
+.main-content .bomb_box div{display: none;}
+/*形状*/
+.bomb_box .shape,.bomb_box  .price,.bomb_box  .cleanliness{width:100%; height:100%;overflow: hidden;}
+.bomb_box .shape a{display: block; color: #999;  background: url(../../images/xz.png)no-repeat; float: left; width:16.5%;height:54px;margin-top: 5px; font-size: 12px; text-align: center;}
+.bomb_box .shape a[data-value="radiant"]{background-position: 56% 0;padding-top:31px;background-size:58px;}
+.bomb_box .shape a[data-value="cushion"]{background-position: 56% -61px;padding-top:31px;background-size:58px;}
+.bomb_box .shape a[data-value="round"]{background-position: 55% -139px;padding-top:31px;background-size:62px;}
+.bomb_box .shape a[data-value="oval"]{background-position: 56% -195px;padding-top:31px;background-size:58px;}
+.bomb_box .shape a[data-value="pear"]{background-position: 56% -260px;padding-top:31px;background-size:58px;}
+.bomb_box .shape a[data-value="marquise"]{background-position: 56% -330px;padding-top:31px;background-size:58px;}
+.bomb_box .shape a[data-value="emerald"]{background-position: 56% -404px;padding-top:31px;background-size:58px;}
+.bomb_box .shape a[data-value="heart"]{background-position: 56% -467px;padding-top:31px;background-size:58px;}
+.bomb_box .shape a[data-value="asscher"]{background-position: 56% -541px;padding-top:31px;background-size:59px;}
+.bomb_box .shape a[data-value="princess"]{background-position: 56% -599px;padding-top:31px;background-size:58px;}
+.bomb_box .shape a[data-value="trilliant"]{background-position: 56% -660px;padding-top:31px;background-size:58px;}
+
+/*价格*/
+.bomb_box  .price a{font-size: 13px; line-height: 36px; font-weight: normal; display: block;width:20%;float: left;height:36px; text-align: center;  }
+.bomb_box  .price a:focus,.bomb_box  .price a:link,.bomb_box  .cleanliness a:link{color: #f1af53;}
+/*颜色*/
+.bomb_box .dia_color{overflow:hidden;padding-top: 5px; background-size:100%; }
+.bomb_box .dia_color a{display: block;   background: url(../../images/ys_img.png)no-repeat center; color: #999; float: left; width:12%;height:48px; font-size: 12px; text-align: center;}
+.bomb_box .dia_color a[data-value="yellow"]{background-position: 56% 0;padding-top:31px;background-size:39px;  }
+.bomb_box .dia_color a[data-value="pink"]{background-position: 55% -53px;padding-top:31px; background-size:40px;}
+.bomb_box .dia_color a[data-value="orange"]{background-position: 56% -157px;padding-top:31px;background-size:40px; }
+.bomb_box .dia_color a[data-value="blue"]{background-position: 56% -106px; padding-top:31px;background-size:40px; }
+.bomb_box .dia_color a[data-value="green"]{background-position: 56% -194px; padding-top:31px;background-size:38px; }
+
+.bomb_box .dia_color a[data-value="champagne"]{background-position: 51% -250px;padding-top:31px;background-size:39px; }
+.bomb_box .dia_color a[data-value="red"]{background-position: 56% -298px;padding-top:31px;background-size:39px; }
+.bomb_box .dia_color a[data-value="gray"]{background-position: 54% -344px;padding-top:31px;background-size:39px; }
+.bomb_box .dia_color a[data-value="purse"]{background-position: 56% -393px;padding-top:31px;background-size:39px; }
+.bomb_box .dia_color a[data-value="violet"]{background-position: 56% -451px;padding-top:31px;background-size:39px; }
+
+.bomb_box .dia_color a[data-value="chameleon"]{background-position: 53% -504px;padding-top:31px;background-size:39px; }
+.bomb_box .dia_color a[data-value="white"]{background-position: 56% -557px;padding-top:31px;background-size:39px; }
+.bomb_box .dia_color a[data-value="black"]{background-position: 49% -606px;padding-top:31px;background-size:39px; }
+.bomb_box .dia_color a[data-value="colorless"]{background-position: 50% -658px;padding-top:31px;background-size:39px; }
+.bomb_box .dia_color a[data-value="argyle"]{background-position: 47% -686px;padding-top:31px;background-size:38px; }
+/*饱和度*/
+.bomb_box .saturation{overflow:hidden;padding-top: 5px; background-size:100%; }
+.bomb_box .saturation a{display: block;   background: url(../../images/bhd.png)no-repeat; color: #999; float: left; width:16.5%;height:48px; font-size: 12px; text-align: center;}
+.bomb_box .saturation a.Faint{background-position: 56% -5px;padding-top:31px;background-size:60px;}
+.bomb_box .saturation a.Very{background-position: 56% -72px;padding-top:31px;background-size:60px;}
+.bomb_box .saturation a.q_light{background-position: 56% -142px;padding-top:31px;background-size:60px;}
+.bomb_box .saturation a.x_light{background-position: 56% -215px;padding-top:31px;background-size:60px;}
+.bomb_box .saturation a.Fancy{background-position: 56% -295px;padding-top:31px;background-size:60px;}
+.bomb_box .saturation a.Intense{background-position: 56% -370px;padding-top:31px;background-size:60px;}
+.bomb_box .saturation a.Vivid{background-position: 56% -449px;padding-top:31px;background-size:60px;}
+.bomb_box .saturation a.Deep{background-position: 56% -526px;padding-top:31px;background-size:60px;}
+.bomb_box .saturation a.Dark{background-position: 56% -600px;padding-top:31px;background-size:60px;}
+
+/*净度*/
+.bomb_box .cleanliness a{display: block; color: #999; float: left; width:11%;line-height:30px;margin-top: 5px; font-size: 13px; text-align: center;}
+.bomb_box .cleanliness a img{height:48%;}
+/*成品金属 + 成品类型*/
+.bomb_box .metal,.bomb_box .jewelry_type{overflow:hidden;padding-top: 5px;}
+.jewelry_type  a{line-height: 42px;}
+.bomb_box .metal a,.bomb_box .jewelry_type  a{display: block; color: #999; float: left; width:25%;height:42px; font-size: 12px; text-align: center;}
+.bomb_box .metal a{display: block; background: url(../../images/caizhi.png)no-repeat center; color: #999; float: left; width:20%;height:42px; font-size: 12px; text-align: center;}
+.bomb_box .metal a[data-value="0"]{background-position: 56% -18px;padding-top:27px;background-size:60px;}
+.bomb_box .metal a[data-value="1"]{background-position: 68% -90px;padding-top:27px;background-size:60px;}
+.bomb_box .metal a[data-value="2"]{background-position: 56% -162px;padding-top:27px;background-size:60px;}
+.bomb_box .metal a[data-value="3"]{background-position: 56% -246px;padding-top:27px;background-size:60px;}
+.bomb_box .metal a[data-value="4"]{background-position: 56% -336px;padding-top:27px;background-size:60px;}
+
+.bomb_box a.active {color:red;font-weight:bold;}
+.bomb_box  .price a:link.active,.bomb_box  .cleanliness a:link.active{color: red;}
+@media (max-width: 767px){
+    .navbar .container-fluid.top-bar .logo{top:0;left:50%;margin-left: -38px;}
+    .grid-structure.dia_center{margin-top: 41px; position: relative;}
+    .main-content.main{margin-top: 0; position: relative;background: #fff;}
+    .page-title.nav_bgd{background:#ff8a81; border-bottom:1px solid #efefef;width:100%;position: fixed;height:40px;z-index: 9; left:0; top:46px;padding:0; margin:0;}
+    .nav_bgd .diamond li{width:16.5%; }
+    .main-content .bomb_box{top:85px;border-bottom: 1px solid #fff0ed; }
+    .main-content .bomb_box div{display: none;}
+    .bomb_box  .price a{width:50%;}
+    .bomb_box .dia_color a{width:20%;}
+    .bomb_box .cleanliness a{width:25%;}
+    .navbar .container-fluid.main-nav .nav-collapse .nav > li > a span{font-size: 18px;margin: 6% 0 0 5%;}
+    .bomb_box .dia_color a[data-value="red"]{background-position: 50% -298px; }
+    .bomb_box .dia_color a[data-value="violet"]{background-position: 50% -451px; }
+    .bomb_box .dia_color a[data-value="white"]{background-position: 50% -557px; }
+    .bomb_box .dia_color a[data-value="purse"]{background-position: 50% -393px; }
+    .bomb_box .dia_color a[data-value="gray"]{background-position: 50% -344px; }
+}
+#wrapper {  position: absolute;  z-index: 1;  top: 0px;  bottom: 0px;  left: -9999px;  width: 100%;  background: #fcedea;  overflow: hidden;  }
+#scroller {  position: absolute;  z-index: 1;  -webkit-tap-highlight-color: rgba(0,0,0,0);  width: 100%;  overflow: hidden;  padding: 0;  }
+#pullUp { background:#fff; height:40px; line-height:30px; padding:0px; font-size:14px; color:#888; text-align: center; }
+#pullUp .pullUpIcon  { display:inline-block; width:40px; height:40px; background:url(../../images/isicon.png?1) 0 0 no-repeat; -webkit-background-size:40px 80px; background-size:40px 80px; -webkit-transition-property:-webkit-transform; -webkit-transition-duration:250ms; vertical-align: middle;	}
+#pullUp .pullUpIcon  { -webkit-transform:rotate(-180deg) translateZ(0); }
+#pullUp.flip .pullUpIcon { -webkit-transform:rotate(0deg) translateZ(0); }
+#pullUp.loading .pullUpIcon { background-position:0 100%; -webkit-transform:rotate(0deg) translateZ(0); -webkit-transition-duration:0ms; -webkit-animation-name:loading; -webkit-animation-duration:2s; -webkit-animation-iteration-count:infinite; -webkit-animation-timing-function:linear; }
+@-webkit-keyframes loading { from { -webkit-transform:rotate(0deg) translateZ(0); } to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
+/*======================裸钻列表详情================*/
+/*详情nav*/
+.pro_nav{height:46px;  width:100%; z-index:100;position: fixed; top:0; left:0;}
+.pro_nav .revert{width:46px; padding:7px 0; color: #666;display: block;  position: absolute; left:0; top:0;}
+.pro_nav .revert i{ font-size: 30px;padding:0 15px;}
+.pro_nav .pto_text{width:100%;font-size: 18px; line-height: 46px; text-align: center;}
+/*banner*/
+.pro_banner{width:100%;  position: relative; border:1px solid #efefef;}
+.swiper-container {  width: 100%; overflow: hidden;   }
+.swiper-wrapper{ width: 100%; overflow: hidden; height:280px; }
+.swiper-container .swiper-slide{width:100%; }
+.swiper-container .swiper-slide img{height:280px;margin:0 auto; display: block;}
+.pagination {  position: absolute;z-index: 50;  left: 0;  text-align: center;  bottom:5px;  width: 100%;  }
+.swiper-pagination-switch {  display: inline-block;  width: 10px;  height: 10px;  border-radius: 10px;  background: #999;  box-shadow: 0px 1px 2px #555 inset;  margin: 0 3px;  cursor: pointer;  }
+.swiper-active-switch {  background: #fff;  }
+.pro_desc,.pro_para{overflow: hidden;}
+.pro_desc p{margin: 0 10px  10px 10px; }
+.pro_desc .desc1{color: #000;padding-top: 10px;}
+.pro_desc .price{color:#f6827a; font-size: 18px;}
+.pro_para .pro_para_title{height:34px;margin:0; line-height: 34px; background:#edebf3; color: #3e3b3b;padding:0 10px;}
+.naked-bot{border-bottom: 1px solid #ebebeb;}
+.bd-right{border-right:1px solid #ebebeb;}
+/*裸钻详情*/
+.csxq-list  li{width:100%; overflow:hidden;display: block; height:39px; line-height: 40px;margin:0; padding:0;}
+.csxq-list  li label{margin:0;width:24%; padding:0 10px; color: #7a7a7a; float: left; display: block;}
+.csxq-list  li span{display: block;padding-left: 10px; float: left; width:76px; color: #151515;}
+.csxq-list li span.big{width:26%;}
+/*底部按钮*/
+.pro_button{position: fixed; left:0; bottom: 0; height:40px;width:100%; background: #feb8ae; z-index: 20;}
+.pro_button a{display: block; width:50%; float: left; text-align: center; line-height: 40px; color: #fff;}
+.pro_button a.a1{background:#f6827a; }
+.int_button{position: fixed; left:0; font-size: 16px; bottom: 0; text-align: center; line-height: 40px; color: #fff; height:40px;width:100%; background: #f6827a; z-index: 20;}
+/*==================绑定用户=================*/
+.user_menue {  margin-top:10px;  background: #FFF;  overflow: hidden;  border-top: 0.1em solid #e4e4e4;  border-bottom: 0.1em solid #e4e4e4;  }
+.user_menue .user-li.bord-b {  border-bottom: 0.1em solid #ebebeb;  margin:0 10px;  }
+.user_menue .user-inpput {  font-weight: normal;  padding: 12px 2% 10px 2%;  width: 100%;  color: #828282;  font-size: 14px;  display: block;  }
+.user-login {  width: 90%;  border: none;  background:#ff8a81;  font-size: 18px;  text-align: center;  color: #FFF;  overflow: hidden;  display: block;  margin: 30px auto;  padding: 12px 0 10px 0;}
+/*===================积分兑换详情=============*/
+.integral_ecx{font-size: 14px;color: #f6827a }
+.inter_text{padding:10px; line-height: 26px;}
+.inter_text img{display: block;}
+/*===================首页添加分类=============*/
+.icon-exchange {width:70px; text-align: center;position: fixed; color: #f0ad4e; top:16px; right:10px;  z-index: 1000;}
+.icon-exchange span{color: #666;}
+.icon-exchange .select{width:70px;text-align: center; display: none; position: absolute; background: #eee; top:30px; left:0; }
+.icon-exchange .fl{padding-left: 5px;}
+.icon-exchange  div span{display: block;border-bottom: 1px solid #fff; line-height: 30px; }
+
+

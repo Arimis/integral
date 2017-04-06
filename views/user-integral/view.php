@@ -1,4 +1,6 @@
 <?php
+use arimis\integral\IntegralUserInterface;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Arimis
@@ -8,6 +10,7 @@
 
 /**
  * @var \arimis\integral\models\IntegralGift $model
+ * @var IntegralUserInterface $userBase
  */
 \arimis\integral\assets\IntegralAsset::register($this);
 
@@ -47,6 +50,4 @@ $this->registerJs($inPageJs);
     </div>
 </div>
 <!---积分兑换详情-->
-<a class="int_button" href="<?=\yii\helpers\Url::toRoute("exchange?gift_codes={$model->gift_code}")?>">
-    立即兑换
-</a>
+<?php if($userBase->getAvailable() > $totalPoints):?><a class="int_button" href="<?=\yii\helpers\Url::toRoute("exchange?gift_codes={$model->gift_code}")?>"><span class="pull-left code">（可用积分：<?=$userBase->getAvailable()?>）</span>立即兑换</a><?php else:?><a class="int_button" href="javascript:;"><span class="pull-left code">（可用积分：<?=$userBase->getAvailable()?>）</span>积分不足</a><?php endif;?>

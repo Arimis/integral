@@ -92,11 +92,14 @@ class UserIntegralController extends IntegralBaseController
      * 礼物详情
      */
     public function actionView() {
+        $userBase = \Yii::$app->integral->getIntegralUser();
         $giftCode = \Yii::$app->getRequest()->get('gift_code');
         $model = $this->findModelByCode($giftCode);
 
         return $this->render("view", [
-            'model' => $model
+            'model' => $model,
+            'totalPoints' => $model->gift_points,
+            'userBase' => $userBase,
         ]);
     }
 
@@ -111,7 +114,7 @@ class UserIntegralController extends IntegralBaseController
         }
 
         $giftCodes = explode(",", $giftCodeStr);
-        $query = IntegralGift::find()->where(["IN", 'gift_code', $giftCodes]);
+        $query = IntegralGift::find()->where(['gift_code' => $giftCodes]);
         $totalPoints = $query->sum("gift_points");
         $gifts = $query->all();
         return $this->render("exchange", [
