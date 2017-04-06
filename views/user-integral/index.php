@@ -1,8 +1,8 @@
 <?php
 use yii\web\View;
-use app\models\UserWechat;
 use yii\helpers\Url;
 use arimis\integral\IntegralUserInterface;
+use arimis\integral\rule\RuleInterface;
 
 /**
  * Created by IntelliJ IDEA.
