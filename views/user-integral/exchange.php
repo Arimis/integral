@@ -85,6 +85,6 @@ $this->registerJs($inPageJs);
         </div>
     <?php endif;?>
     </div>
-    <a class="int_button" href="javascript:;" id="exchangeConfirmBtn" data-gift-codes="<?=$giftCodes?>">确认兑换</a>
+    <a class="int_button" href="javascript:;" <?php if($userBase->getAvailable() > $totalPoints):?>id="exchangeConfirmBtn"<?php else:?>disabled="disabled"<?php endif;?> data-gift-codes="<?=$giftCodes?>"><?php if($userBase->getAvailable() > $totalPoints):?>确认兑换<?php else:?>积分不足<?php endif;?></a>
 </div>
 

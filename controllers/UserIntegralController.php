@@ -144,6 +144,9 @@ class UserIntegralController extends IntegralBaseController
             $totalPoints = $query->sum("gift_points");
             $totalCash = $query->sum("gift_cost");
             $gifts = $query->all();
+            if($totalPoints > $userBase->getAvailable()) {
+                throw new Exception(\Yii::t("arimis-integral", "Your available points not enough。"));
+            }
             $exchangeOrder = new ExchangeOrder();
             (new UniqueCodeService($exchangeOrder, "order_sn"))->getCurrentCode();
             $exchangeOrder->item_quantity = count($gifts);
@@ -154,7 +157,7 @@ class UserIntegralController extends IntegralBaseController
             $exchangeOrder->create_time = date("Y-m-d H:i:s");
 
             if(!$exchangeOrder->save()) {
-                throw  new Exception(\Yii::t("arimis-integral", "Exchange order save failed!"));
+                throw new Exception(\Yii::t("arimis-integral", "Exchange order save failed!"));
             }
 
             foreach ($gifts as $gift) {
