@@ -19,7 +19,7 @@ $inPageJs = <<<EOF
 $('#exchangeConfirmBtn').click(function() {
     var giftCodes = $(this).attr('data-gift-codes');
     $.post('{$orderUrl}', {
-        giftCodes:  giftCodes   
+        giftCodes:  giftCodes
     }, function(res) {
         if(res.code) {
             if(res.code  == 1 && res.msg) {
@@ -40,22 +40,22 @@ $this->registerJs($inPageJs);
 ?>
 
 <style>
-    body{background:#fff0ed;}
+    body{background:#fff; color: #666;}
     .container-fluid{padding:0; }
 
     .container-fluid .order_list{width:100%; margin-top: -15px; overflow: hidden;}
     .container-fluid .order_list .order_list_top{height:34px;padding:0 12px;font-size: 13px; background: #fff; border-bottom:1px solid #dedede; line-height: 34px;}
-    .order_list_top  em{color:#ff8a81;font-style: normal; }
+    .order_list_top  em{color:#f55582;font-style: normal; }
     .container-fluid .order_list_center{background: #fff; position: relative; overflow: hidden;border-bottom:1px solid #dedede;}
     .order_list_center .inter_img{width:80px; height:80px;float: left;}
     .order_list_center .inter_text{position: absolute; color:#888888;line-height: 22px; top:16px; font-size: 12px; left:0; margin-left: 100px;}
-    .order_list_center .inter_text em{color:#f6827a;font-style: normal;}
+    .order_list_center .inter_text em{color:#f55582;font-style: normal;}
     .order_list_center .order{overflow: hidden;padding:10px; border-bottom:1px solid #edf2f8;}
     .order_list_center .order:last-child{border:none;}
     .container-fluid .no_gift{margin:0 10px; height:40px; line-height: 40px; text-align: center; color:#f6827a;  background: #fff;}
     .int_button:focus,.int_button:link{color: #fff;}
 </style>
-<div class="container-fluid main">
+<div class="container-fluid main" >
     <?php if($gifts && count($gifts) > 0):?>
     <div class="order_list">
     <?php foreach ($gifts as $gift):?>
@@ -85,6 +85,6 @@ $this->registerJs($inPageJs);
         </div>
     <?php endif;?>
     </div>
-    <a class="int_button" href="javascript:;" <?php if($userBase->getAvailable() > $totalPoints):?>id="exchangeConfirmBtn"<?php else:?>disabled="disabled"<?php endif;?> data-gift-codes="<?=$giftCodes?>"><?php if($userBase->getAvailable() > $totalPoints):?>确认兑换<?php else:?>积分不足<?php endif;?></a>
+    <a class="int_button" style="background: #c29e6c; !important" href="javascript:;" <?php if($userBase->getAvailable() > $totalPoints):?>id="exchangeConfirmBtn"<?php else:?>disabled="disabled"<?php endif;?> data-gift-codes="<?=$giftCodes?>"><?php if($userBase->getAvailable() > $totalPoints):?>确认兑换<?php else:?>积分不足<?php endif;?></a>
 </div>
 

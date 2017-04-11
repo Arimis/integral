@@ -99,12 +99,17 @@ EOF;
 $this->registerJs($inPageJs);
 
 ?>
+<style>
+    .int_container ul li{height:196px;}
+    .int_container ul li img{height:154px;}
+    .int_Selected{color: #eee;}
+</style>
 <!---积分兑换列表--->
-<div class="main-content main" style="background: #fff0ed;">
+<div class="main-content main" style="background: #f7f7f7; color: #666;">
     <div class="int_Selected">选择(<em>0</em>)</div>
     <div class="int_nav">
         <span class="left">可用积分：<em><?=$userBase->getAvailable()?></em></span>
-        <label class="share"><a href="<?=\yii\helpers\Url::toRoute("/front/share/index") ?>"><i class="icon-share-alt"></i><br>分享赢积分</a></label>
+        <label class="share" style="margin-top: 5px;"><a href="<?=\yii\helpers\Url::toRoute("/front/share/index") ?>"><i class="icon-share-alt"></i><br>分享赢积分</a></label>
     </div>
     <div class="int_container">
         <ul>
@@ -126,5 +131,5 @@ $this->registerJs($inPageJs);
             <?php endif;?>
         </ul>
     </div>
-    <a class="int_button" href="<?=\yii\helpers\Url::toRoute("/integral/user-integral/exchange")?>" id="exchangeBtn">立即兑换</a>
+    <a class="int_button" href="<?=\yii\helpers\Url::toRoute("/integral/user-integral/exchange")?>" style="background: #c29e6c;" id="exchangeBtn">立即兑换</a>
 </div>

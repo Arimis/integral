@@ -15,15 +15,15 @@
 \arimis\integral\assets\IntegralAsset::register($this);
 ?>
 <style>
-    body{background:#fff0ed;}
+    body{background:#f7f7f7; color: #666;}
     .container-fluid{padding:0; }
     .container-fluid .order_list{width:100%; margin-top: -15px; overflow: hidden;}
     .container-fluid .order_list .order_list_top{height:34px;padding:0 12px;margin-top: 10px; font-size: 13px; background: #fff; border-bottom:1px solid #dedede; line-height: 34px;}
-    .order_list_top .pull-right em{color:#ff8a81;font-style: normal; }
+    .order_list_top .pull-right em{color:#f55582;font-style: normal; }
     .container-fluid .order_list_center{background: #fff; position: relative; overflow: hidden;border-bottom:1px solid #dedede;}
     .order_list_center .inter_img{width:80px; height:80px;float: left;}
     .order_list_center .inter_text{position: absolute; color:#888888;line-height: 22px; top:16px; font-size: 12px; left:0; margin-left: 100px;}
-    .order_list_center .inter_text em{color:#f6827a;font-style: normal;}
+    .order_list_center .inter_text em{color:#f55582;font-style: normal;}
     .order_list_center .order{overflow: hidden;padding:10px; border-bottom:1px solid #edf2f8;}
     .order_list_center .order:last-child{border:none;}
 </style>

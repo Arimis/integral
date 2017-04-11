@@ -24,7 +24,7 @@ class IntegralAsset extends AssetBundle {
      * {@inheritdoc}
      */
     public $css = [
-        'css/gift.css',
+        'css/gift.css?2',
         'css/integral.css?2',
         'css/idangerous.swiper.css'
     ];
