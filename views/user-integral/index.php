@@ -44,12 +44,11 @@ $this->title = Yii::t("app", "用户首页");
 <style>
     .summary{padding:0 0 15px 10px ;}
     .table > thead > tr > th, .table > tbody > tr > td{  border-bottom: 1px solid #dddddd; text-align: center; padding:4px 0; font-weight: normal; }
-
 </style>
 <div>
     <!-- 个人中心--->
-    <div class="main-content main" style="background: #fff; color: #666; position: relative;">
-        <div class="user_list">
+    <div class="main-content main" style=" color: #666;background: #f7f7f7; position: relative;">
+        <div class="user_list user_list_pos">
             <ul>
                 <li class="show_int"><span><em><?=$userBase->getTotal()?></em><br>总积分</span> <span><em><?=$userBase->getAvailable()?></em><br>可用积分</span> <span><em><?=$userBase->getFrozen()?></em><br>冻结积分</span> <span style="border-left: 1px solid #efefef;"> <a
                         href="<?=Url::toRoute("/front/share/index");?>" class="" style="color: #f6827a;"><i class="icon-share-alt"></i><br>分享赢积分</a>
