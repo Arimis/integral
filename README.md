@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist arimis-integral/integral "*"
+php composer.phar require --prefer-dist arimis/integral "*"
 ```
 
 or add
 
 ```
-"arimis-integral/integral": "*"
+"arimis/integral": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -26,6 +26,3 @@ Usage
 -----
 
 Once the extension is installed, simply use it in your code by  :
-
-```php
-<?= \arimis\integral\AutoloadExample::widget(); ?>```

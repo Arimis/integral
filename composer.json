@@ -10,6 +10,7 @@
             "email": "arimis@163.com"
         }
     ],
+  "minimum-stability" : "stable",
     "require": {
        "php": ">=5.6.0",
         "yiisoft/yii2": "~2.0.5",

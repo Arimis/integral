@@ -3,7 +3,7 @@
 namespace arimis\integral\controllers;
 
 use arimis\integral\IntegralServiceInterface;
-use arimis\UniqueCodeService;
+use arimis\integral\UniqueCodeService;
 use Yii;
 use arimis\integral\models\IntegralRule;
 use arimis\integral\models\IntegralRuleSearch;

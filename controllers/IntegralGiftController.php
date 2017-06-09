@@ -2,7 +2,6 @@
 
 namespace arimis\integral\controllers;
 
-use arimis\UniqueCodeService;
 use Yii;
 use arimis\integral\models\IntegralGift;
 use yii\data\ActiveDataProvider;
@@ -89,7 +88,7 @@ class IntegralGiftController extends IntegralBaseController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->gift_id]);
         } else {
-            $uniqueServer = new UniqueCodeService($model, "gift_code");
+            $uniqueServer = new \arimis\integral\UniqueCodeService($model, "gift_code");
             $uniqueServer->getCurrentCode();
             return $this->render('create', [
                 'model' => $model,
